@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "Corporate";
+  src: url(./fonts/Corporate-Gothic-NBP.woff2);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+.header-navigation {
+  @apply hidden lg:inline-block;
+
+  &.mobile {
+    @apply block lg:block;
+
+    .header-link {
+      @apply block lg:block;
+
+      &:not(:first-child) {
+        @apply mt-6;
+      }
+      &:not(:last-child) {
+        @apply mr-0;
+      }
+    }
+  }
+
+  .header-link {
+    @apply uppercase hover:text-yellow hover:cursor-pointer text-gray tracking-wider;
+
+    &:not(:last-child) {
+      @apply mr-8;
+    }
+  }  
+}
+
+.header-close-drawer {
+  @apply text-3xl text-yellow hover:text-yellow-dark hover:cursor-pointer;
+}
+
+.header-open-drawer {
+  @apply text-3xl text-yellow hover:text-yellow-dark hover:cursor-pointer inline-block lg:hidden;
+}
+
+.header-social {
+  &.mobile {
+    @apply block text-center;
+
+    .header-social-icon {
+      @apply text-3xl text-gray hover:text-yellow hover:cursor-pointer inline-block lg:hidden;
+    }
+  }
+
+  .header-social-icon {
+    @apply text-3xl text-gray hover:text-yellow hover:cursor-pointer hidden lg:inline-block mx-3;
+  }
+}
+
+.nav-item-selected {
+  filter: invert(50%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
